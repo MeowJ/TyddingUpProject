@@ -1,0 +1,377 @@
+<?xml version="1.0"?>
+<robot name="EVA">
+
+  <link name="World"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+
+  <joint name="joint_base" type="fixed">
+    <parent link="World"/>
+    <child link="base_link"/>
+    <origin rpy="0.0 0.0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 -1.57079632679" />
+      <geometry>
+        <mesh
+          filename="/home/robin/Automata/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.866666666666667 0.890196078431373 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link name="Link_1">
+    <inertial>
+      <origin
+        xyz="0.038132 -0.001041 0.248143"
+        rpy="0 0 0" />
+      <mass
+        value="1.816324" />
+      <inertia
+        ixx="0.007669" 
+        ixy="-0.000049"
+        ixz="-0.002724"
+        iyy="0.008699"
+        iyz="0.000034"
+        izz="0.004781" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0.1505"
+        rpy="1.57079632679 0 -1.57079632679" />
+      <geometry>
+        <mesh
+          filename="/home/robin/Automata/meshes/1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.866666666666667 0.890196078431373 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint name="Axis_1"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit effort="12.0" lower="-3.124139" upper="3.124139" velocity="2.09"/> 
+  </joint>
+
+ <link name="Link_2">
+    <inertial>
+      <origin
+        xyz="-0.008683 0.096519 -0.047604"
+        rpy="0 0 0" />
+      <mass
+        value="1.585778" />
+      <inertia
+        ixx="0.015154" 
+        ixy="0.00009"
+        ixz="0.000077"
+        iyy="0.002266"
+        iyz="-0.000153"
+        izz="0.016697" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 -1.57079632679 0" />
+      <geometry>
+        <mesh
+          filename="/home/robin/Automata/meshes/2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.866666666666667 0.890196078431373 1" />
+      </material>
+    </visual>
+  </link>
+
+<joint
+    name="Axis_2"
+    type="revolute">
+    <origin
+      xyz="0.056 0 0.2784"
+      rpy="1.57079632679 0 0" />
+    <parent
+      link="Link_1" />
+    <child
+      link="Link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit effort="12.0" lower="-2.705260" upper="1.22173" velocity="2.09"/> 
+  </joint>
+
+ <link name="Link_3">
+    <inertial>
+      <origin
+        xyz="0.033391 0.024196 0.001963"
+        rpy="0 0 0" />
+      <mass
+        value="1.559694" />
+      <inertia
+        ixx="0.003066" 
+        ixy="-0.001414"
+        ixz="-0.000086"
+        iyy="0.004713"
+        iyz="-0.000164"
+        izz="0.004922" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 -0.01"
+        rpy="0 -1.57079632679 -1.57079632679" />
+      <geometry>
+        <mesh
+          filename="/home/robin/Automata/meshes/3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.866666666666667 0.890196078431373 1" />
+      </material>
+    </visual>
+  </link>
+
+<joint
+    name="Axis_3"
+    type="revolute">
+    <origin
+      xyz="0 0.205 0"
+      rpy="0 0 1.57079632679" />
+    <parent
+      link="Link_2" />
+    <child
+      link="Link_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit effort="12.0" lower="-2.792527" upper="0.785398" velocity="2.09"/> 
+  </joint>
+
+<link name="Link_4">
+    <inertial>
+      <origin
+        xyz="-0.000172 -0.005206 0.180121"
+        rpy="0 0 0" />
+      <mass
+        value="1.322254" />
+      <inertia
+        ixx="0.006520" 
+        ixy="-0.000002"
+        ixz="0.000008"
+        iyy="0.006056"
+        iyz="0.001338"
+        izz="0.001730" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0.09315"
+        rpy="1.57079632679 0 1.57079632679" />
+      <geometry>
+        <mesh
+          filename="/home/robin/Automata/meshes/4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.866666666666667 0.890196078431373 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="Axis_4"
+    type="revolute">
+    <origin
+      xyz="0 0.056 0"
+      rpy="-1.57079632679 0 -1.57079632679" />
+    <parent
+      link="Link_3" />
+    <child
+      link="Link_4" />
+    <axis
+      xyz="0 0 1" />
+    <limit effort="12.0" lower="-3.124139" upper="3.124139" velocity="2.09"/> 
+  </joint>
+
+ <link name="Link_5">
+    <inertial>
+      <origin
+        xyz="-0.033690 0.010656 -0.001993"
+        rpy="0 0 0" />
+      <mass
+        value="0.969513" />
+      <inertia
+        ixx="0.001040" 
+        ixy="0.000250"
+        ixz="0.000051"
+        iyy="0.001783"
+        iyz="-0.000014"
+        izz="0.002037" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="3.14159265359 1.57079632679 0" />
+      <geometry>
+        <mesh
+          filename="/home/robin/Automata/meshes/5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.866666666666667 0.890196078431373 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint
+    name="Axis_5"
+    type="revolute">
+    <origin
+      xyz="0 0 0.2906"
+      rpy="1.57079632679 0 0" />
+    <parent
+      link="Link_4" />
+    <child
+      link="Link_5" />
+    <axis
+      xyz="0 0 1" />
+    <limit effort="12.0" lower="-2.705260" upper="0.174533" velocity="2.09"/> 
+  </joint>
+
+  <link name="Link_6">
+    <inertial>
+      <origin
+        xyz="0.000062 -0.000069 0.089104"
+        rpy="0 0 0" />
+      <mass
+        value="0.111502" />
+      <inertia
+        ixx="0.00003684" 
+        ixy="0"
+        ixz="0"
+        iyy="0.00003673"
+        iyz="0"
+        izz="0.00004593" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0.0891"
+        rpy="-1.57079632679 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/robin/Automata/meshes/6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.866666666666667 0.890196078431373 1" />
+      </material>
+    </visual>
+  </link>
+
+<joint name="Axis_6"
+    type="continuous">
+    <origin
+      xyz="-0.065 0 0"
+      rpy="-1.57079632679 0 0" />
+    <parent
+      link="Link_5" />
+    <child
+      link="Link_6" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+<joint name="EE_Interface"
+    type="fixed">
+    <origin
+      xyz="0 0 0.1044"
+      rpy="0 0 0" />
+    <parent
+      link="Link_6" />
+    <child
+      link="EE" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+ <link name="EE">
+    <inertial>
+          <origin
+            xyz="0.1 0.2 0.3"
+            rpy="0 0 0" />
+          <mass
+            value="0" />
+          <inertia
+            ixx="0" 
+            ixy="0"
+            ixz="0"
+            iyy="0"
+            iyz="0"
+            izz="0" />
+        </inertial>
+  </link>
+
+<joint name="Tool_Interface"
+    type="fixed">
+    <origin
+      xyz="0.05 0.03 0.2"
+      rpy="0 0 0" />
+    <parent
+      link="EE" />
+    <child
+      link="Tool" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link name="Tool">
+    <inertial>
+          <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+          <mass
+            value="0" />
+          <inertia
+            ixx="0" 
+            ixy="0"
+            ixz="0"
+            iyy="0"
+            iyz="0"
+            izz="0" />
+        </inertial>
+  </link>
+
+</robot>

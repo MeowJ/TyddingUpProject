@@ -1,0 +1,2 @@
+eva_description:my_robot_urdf
+-DCATKIN_DEVEL_PREFIX=/home/robin/Automata/eva_ws/devel -DCMAKE_INSTALL_PREFIX=/home/robin/Automata/eva_ws/install -G Unix Makefiles

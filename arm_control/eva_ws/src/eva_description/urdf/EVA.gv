@@ -1,0 +1,32 @@
+digraph G {
+node [shape=box];
+"World" [label="World"];
+"base_link" [label="base_link"];
+"Link_1" [label="Link_1"];
+"Link_2" [label="Link_2"];
+"Link_3" [label="Link_3"];
+"Link_4" [label="Link_4"];
+"Link_5" [label="Link_5"];
+"Link_6" [label="Link_6"];
+"EE" [label="EE"];
+"Tool" [label="Tool"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"World" -> "joint_base" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"joint_base" -> "base_link"
+"base_link" -> "Axis_1" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"Axis_1" -> "Link_1"
+"Link_1" -> "Axis_2" [label="xyz: 0.056 0 0.2784 \nrpy: 1.5708 -0 0"]
+"Axis_2" -> "Link_2"
+"Link_2" -> "Axis_3" [label="xyz: 0 0.205 0 \nrpy: 0 -0 1.5708"]
+"Axis_3" -> "Link_3"
+"Link_3" -> "Axis_4" [label="xyz: 0 0.056 0 \nrpy: -1.5708 -5.55112e-17 -1.5708"]
+"Axis_4" -> "Link_4"
+"Link_4" -> "Axis_5" [label="xyz: 0 0 0.2906 \nrpy: 1.5708 -0 0"]
+"Axis_5" -> "Link_5"
+"Link_5" -> "Axis_6" [label="xyz: -0.065 0 0 \nrpy: -1.5708 0 0"]
+"Axis_6" -> "Link_6"
+"Link_6" -> "EE_Interface" [label="xyz: 0 0 0.1044 \nrpy: 0 -0 0"]
+"EE_Interface" -> "EE"
+"EE" -> "Tool_Interface" [label="xyz: 0.05 0.03 0.2 \nrpy: 0 -0 0"]
+"Tool_Interface" -> "Tool"
+}

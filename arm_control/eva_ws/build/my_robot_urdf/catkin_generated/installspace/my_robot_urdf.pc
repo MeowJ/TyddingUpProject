@@ -1,0 +1,8 @@
+prefix=/home/robin/Automata/eva_ws/install
+
+Name: my_robot_urdf
+Description: Description of my_robot_urdf
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/robin/Automata/eva_ws/install/lib 
+Requires: 

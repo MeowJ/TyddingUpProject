@@ -1,0 +1,8 @@
+prefix=/home/robin/Automata/eva_ws/install
+
+Name: eva_description
+Description: Description of eva_description
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/robin/Automata/eva_ws/install/lib 
+Requires: 
